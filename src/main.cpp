@@ -2784,7 +2784,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nNonce = %u \n", block.nNonce);
 
         if (fTestNet)
-           assert(block.hashMerkleRoot == uint256("0x"));
+           assert(block.hashMerkleRoot == uint256("0x184125f50e97191993cbcdeb57f2bed345c6fa3b2e76dc8ffa171f55b1a6de75"));
         else
            assert(block.hashMerkleRoot == uint256("0x184125f50e97191993cbcdeb57f2bed345c6fa3b2e76dc8ffa171f55b1a6de75"));
 
