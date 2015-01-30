@@ -64,7 +64,7 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x9d91be1c93b5873ee8705a50041561c9350abc9f51ad6ec4603a580ce8458d49");
+static const uint256 hashGenesisBlockOfficial("0xc24fa3b2bd1a4c823084ae6d837a606044a38b6373efee7dd8b5aaba96ecc36a");
 static const uint256 hashGenesisBlockTestNet("0x");
 
 inline int64 PastDrift(int64 nTime)
