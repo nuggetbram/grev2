@@ -33,8 +33,8 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64 MIN_TX_FEE = 0.1 * CENT;
 static const int64 MIN_RELAY_TX_FEE = 0.1 * CENT;
 static const int64 MAX_MONEY = 10000000 * COIN;
-static const int64 MAX_MINT_PROOF_OF_WORK = 10 * COIN;
-static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 10 * COIN;
+static const int64 MAX_MINT_PROOF_OF_WORK = 15 * COIN;
+static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 15 * COIN;
 static const int64 MAX_MINT_PROOF_OF_STAKE = 1 * CENT;
 //Version 2.0
 static const int64 MAX_MINT_PROOF_OF_STAKEV2 = 100 * CENT;
@@ -57,6 +57,9 @@ static const unsigned int REWARD_FIX_SWITCH_TIME = 1378512000; // 7 SEP 2013 00:
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
+
+#define FOUNDATION_ADDRESS "EkovKWgKya4zNwPUGAzDJhRuYD9RuCA5Gx"
+#define FOUNDATION_ADDRESS_TEST "mwmPTAA7cSDY8Dd5rRHuYitwS2hByXQpdA"
 
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;
@@ -144,7 +147,8 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 unsigned int GetNextTargetRequiredV1(const CBlockIndex* pindexLast, bool fProofOfStake);
 unsigned int GetNextTargetRequiredV2(const CBlockIndex* pindexLast, bool fProofOfStake);
 bool CheckProofOfWork(uint256 hash, unsigned int nBits);
-int64 GetProofOfWorkReward(unsigned int nBits);
+float GetProofOfWorkReward(unsigned int nBits);
+float GetFoundationAmount(unsigned int nBits);
 int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nBits, unsigned int nTime, bool bCoinYearOnly=false);
 int64 GetProofOfStakeRewardV1(int64 nCoinAge, unsigned int nBits, unsigned int nTime, bool bCoinYearOnly=false);
 int64 GetProofOfStakeRewardV2(int64 nCoinAge, unsigned int nBits, unsigned int nTime, bool bCoinYearOnly=false);

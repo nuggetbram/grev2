@@ -128,8 +128,15 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake)
 
     if (!fProofOfStake)
     {
+        CBitcoinAddress address(!fTestNet ? FOUNDATION_ADDRESS : FOUNDATION_ADDRESS_TEST);
+        txNew.vout.resize(2);
         CReserveKey reservekey(pwallet);
         txNew.vout[0].scriptPubKey << reservekey.GetReservedKey() << OP_CHECKSIG;
+        txNew.vout[1].scriptPubKey.SetDestination(address.Get());
+    	    
+    	    
+    	
+        
     }
     else
         txNew.vout[0].SetEmpty();
@@ -358,8 +365,10 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake)
             printf("CreateNewBlock(): total size %"PRI64u"\n", nBlockSize);
 
         if (!fProofOfStake)
-            pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits);
-
+        {
+        	pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits);
+        	pblock->vtx[0].vout[1].nValue = GetFoundationAmount(pblock->nBits);
+        }
         // Fill in header
         pblock->hashPrevBlock = pindexPrev->GetBlockHash();
         pblock->nTime = max(pindexPrev->GetMedianTimePast()+1, pblock->GetMaxTransactionTime());
