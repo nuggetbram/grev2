@@ -58,7 +58,7 @@ inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONE
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-#define FOUNDATION_ADDRESS "EkovKWgKya4zNwPUGAzDJhRuYD9RuCA5Gx"
+#define FOUNDATION_ADDRESS "EsK53UsHNuYUVuq8aJ8F99LRTvyCdJEcMU"
 #define FOUNDATION_ADDRESS_TEST "mwmPTAA7cSDY8Dd5rRHuYitwS2hByXQpdA"
 
 #ifdef USE_UPNP
@@ -80,9 +80,7 @@ inline int64 PastDrift(int64 nTime)
 
 inline int64 FutureDrift(int64 nTime)
 {
-    if (nTime > VERSION2_SWITCH_TIME)
-        return nTime + 15 * 60;  // up to 15 minutes from the future
-    else
+    
         return nTime + 2 * 60 * 60;  // up to 120 minutes from the future
 }
 

@@ -581,55 +581,55 @@ qrc_bitcoin.cpp: src/qt/bitcoin.qrc \
 		src/qt/res/images/splash2.jpg \
 		src/qt/locale/bitcoin_en.qm \
 		src/qt/locale/bitcoin_ru.qm \
+		src/qt/res/icons/tx_input.png \
+		src/qt/res/icons/inspect.png \
+		src/qt/res/icons/tx_mined.png \
+		src/qt/res/icons/lock_open.png \
 		src/qt/res/icons/GreenCoinX-128.png \
-		src/qt/res/icons/export2.png \
+		src/qt/res/icons/configure.png \
+		src/qt/res/icons/qrcode.png \
+		src/qt/res/icons/address-book.png \
+		src/qt/res/icons/GreenCoinX-128.png \
+		src/qt/res/icons/lock_closed.png \
 		src/qt/res/icons/edit.png \
+		src/qt/res/icons/repair.png \
+		src/qt/res/icons/synced.png \
+		src/qt/res/icons/export2.png \
+		src/qt/res/icons/receive.png \
+		src/qt/res/icons/blexp.png \
+		src/qt/res/icons/export.png \
+		src/qt/res/icons/filesave.png \
+		src/qt/res/icons/transaction2.png \
+		src/qt/res/icons/transaction0.png \
+		src/qt/res/icons/editpaste.png \
+		src/qt/res/icons/clock1.png \
+		src/qt/res/icons/clock2.png \
+		src/qt/res/icons/clock3.png \
+		src/qt/res/icons/editcopy.png \
+		src/qt/res/icons/overview.png \
+		src/qt/res/icons/clock4.png \
+		src/qt/res/icons/clock5.png \
+		src/qt/res/icons/add.png \
 		src/qt/res/icons/import.png \
+		src/qt/res/icons/staking_on.png \
+		src/qt/res/icons/send.png \
+		src/qt/res/icons/history.png \
+		src/qt/res/icons/tx_inout.png \
+		src/qt/res/icons/GreenCoinX-16.png \
+		src/qt/res/icons/debugwindow.png \
+		src/qt/res/icons/GreenCoinX-16.png \
+		src/qt/res/icons/key.png \
+		src/qt/res/icons/quit.png \
+		src/qt/res/icons/transaction_conflicted.png \
+		src/qt/res/icons/info.png \
+		src/qt/res/icons/tx_output.png \
+		src/qt/res/icons/staking_off.png \
 		src/qt/res/icons/connect0_16.png \
 		src/qt/res/icons/connect1_16.png \
 		src/qt/res/icons/connect2_16.png \
 		src/qt/res/icons/connect3_16.png \
 		src/qt/res/icons/connect4_16.png \
-		src/qt/res/icons/editcopy.png \
-		src/qt/res/icons/inspect.png \
-		src/qt/res/icons/tx_inout.png \
-		src/qt/res/icons/lock_open.png \
-		src/qt/res/icons/debugwindow.png \
-		src/qt/res/icons/address-book.png \
-		src/qt/res/icons/GreenCoinX-16.png \
-		src/qt/res/icons/remove.png \
-		src/qt/res/icons/send.png \
-		src/qt/res/icons/staking_off.png \
-		src/qt/res/icons/GreenCoinX-16.png \
-		src/qt/res/icons/blexp.png \
-		src/qt/res/icons/filesave.png \
-		src/qt/res/icons/receive.png \
-		src/qt/res/icons/qrcode.png \
-		src/qt/res/icons/add.png \
-		src/qt/res/icons/quit.png \
-		src/qt/res/icons/info.png \
-		src/qt/res/icons/tx_output.png \
-		src/qt/res/icons/transaction2.png \
-		src/qt/res/icons/tx_input.png \
-		src/qt/res/icons/transaction0.png \
-		src/qt/res/icons/staking_on.png \
-		src/qt/res/icons/clock1.png \
-		src/qt/res/icons/overview.png \
-		src/qt/res/icons/transaction_conflicted.png \
-		src/qt/res/icons/tx_mined.png \
-		src/qt/res/icons/clock2.png \
-		src/qt/res/icons/repair.png \
-		src/qt/res/icons/synced.png \
-		src/qt/res/icons/GreenCoinX-128.png \
-		src/qt/res/icons/clock3.png \
-		src/qt/res/icons/clock4.png \
-		src/qt/res/icons/clock5.png \
-		src/qt/res/icons/editpaste.png \
-		src/qt/res/icons/key.png \
-		src/qt/res/icons/configure.png \
-		src/qt/res/icons/export.png \
-		src/qt/res/icons/lock_closed.png \
-		src/qt/res/icons/history.png
+		src/qt/res/icons/remove.png
 	/usr/lib/x86_64-linux-gnu/qt5/bin/rcc -name bitcoin src/qt/bitcoin.qrc -o qrc_bitcoin.cpp
 
 compiler_moc_header_make_all: build/moc_bitcoingui.cpp build/moc_transactiontablemodel.cpp build/moc_addresstablemodel.cpp build/moc_optionsdialog.cpp build/moc_sendcoinsdialog.cpp build/moc_coincontroldialog.cpp build/moc_coincontroltreewidget.cpp build/moc_addressbookpage.cpp build/moc_signverifymessagedialog.cpp build/moc_aboutdialog.cpp build/moc_editaddressdialog.cpp build/moc_bitcoinaddressvalidator.cpp build/moc_clientmodel.cpp build/moc_guiutil.cpp build/moc_optionsmodel.cpp build/moc_monitoreddatamapper.cpp build/moc_transactiondesc.cpp build/moc_transactiondescdialog.cpp build/moc_bitcoinamountfield.cpp build/moc_transactionfilterproxy.cpp build/moc_transactionview.cpp build/moc_walletmodel.cpp build/moc_overviewpage.cpp build/moc_csvmodelwriter.cpp build/moc_sendcoinsentry.cpp build/moc_qvalidatedlineedit.cpp build/moc_qvaluecombobox.cpp build/moc_askpassphrasedialog.cpp build/moc_notificator.cpp build/moc_rpcconsole.cpp build/moc_blockbrowser.cpp build/moc_savingsdialog.cpp
@@ -1009,6 +1009,9 @@ build/addresstablemodel.o: src/qt/addresstablemodel.cpp src/qt/addresstablemodel
 
 build/optionsdialog.o: src/qt/optionsdialog.cpp src/qt/optionsdialog.h \
 		build/ui_optionsdialog.h \
+		src/qt/bitcoinamountfield.h \
+		src/qt/qvalidatedlineedit.h \
+		src/qt/qvaluecombobox.h \
 		src/qt/bitcoinunits.h \
 		src/qt/monitoreddatamapper.h \
 		src/netbase.h \
@@ -1062,6 +1065,7 @@ build/sendcoinsdialog.o: src/qt/sendcoinsdialog.cpp src/qt/sendcoinsdialog.h \
 
 build/coincontroldialog.o: src/qt/coincontroldialog.cpp src/qt/coincontroldialog.h \
 		build/ui_coincontroldialog.h \
+		src/qt/coincontroltreewidget.h \
 		src/init.h \
 		src/wallet.h \
 		src/main.h \
@@ -1112,6 +1116,7 @@ build/addressbookpage.o: src/qt/addressbookpage.cpp src/qt/addressbookpage.h \
 
 build/signverifymessagedialog.o: src/qt/signverifymessagedialog.cpp src/qt/signverifymessagedialog.h \
 		build/ui_signverifymessagedialog.h \
+		src/qt/qvalidatedlineedit.h \
 		src/qt/addressbookpage.h \
 		src/base58.h \
 		src/bignum.h \
@@ -2026,6 +2031,8 @@ build/crypter.o: src/crypter.cpp src/crypter.h \
 
 build/sendcoinsentry.o: src/qt/sendcoinsentry.cpp src/qt/sendcoinsentry.h \
 		build/ui_sendcoinsentry.h \
+		src/qt/bitcoinamountfield.h \
+		src/qt/qvalidatedlineedit.h \
 		src/qt/guiutil.h \
 		src/qt/bitcoinunits.h \
 		src/qt/addressbookpage.h \
