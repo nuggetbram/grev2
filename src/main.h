@@ -72,9 +72,7 @@ static const uint256 hashGenesisBlockTestNet("0x");
 
 inline int64 PastDrift(int64 nTime)
 {
-    if (nTime > VERSION2_SWITCH_TIME)
-        return nTime - 15 * 60;  // up to 15 minutes from the past
-    else
+    
         return nTime - 2 * 60 * 60;  // up to 120 minutes from the past
 }
 
