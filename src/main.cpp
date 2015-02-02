@@ -955,7 +955,11 @@ float GetProofOfWorkReward(unsigned int nHeight)
     nBlockReward = 6000000;
     }
     
-    if(nHeight > 2102400)
+    if(nHeight <= 2102400)
+    	    {
+    	    	nBlockReward = 3.8;    
+    	    }
+     else if(nHeight > 2102400)
     	    {
     	    nBlockReward = 3.7;
     	    }
@@ -3080,7 +3084,7 @@ bool LoadBlockIndex(bool fAllowNew)
 //    CTxOut(empty)
 //vMerkleTree: ea6fed5e2
         // Genesis block
-        const char* pszTimestamp = !fTestNet ? "30/01/2015-5:14PM AESDST" : "Tranz Testnet";
+        const char* pszTimestamp = !fTestNet ? "03/02/2015-6:33PM AESDST" : "Tranz Testnet";
         CTransaction txNew;
        txNew.nTime = nChainStartTime;
         txNew.vin.resize(1);
@@ -3094,7 +3098,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1422596000;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 461308;
+        block.nNonce   = 215;
         if (fTestNet)
         {
             block.nTime = 1371910069;
@@ -3102,22 +3106,7 @@ bool LoadBlockIndex(bool fAllowNew)
             block.nNonce = 3859086;
         }
 
- 	   if (false  && (block.GetHash() != hashGenesisBlock)) {
-	 
-		// This will figure out a valid hash and Nonce if you're
-		// creating a different genesis block:
-		    uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
-		    while (block.GetHash() > hashTarget)
-		       {
-		           ++block.nNonce;
-		           if (block.nNonce == 0)
-		           {
-		               printf("NONCE WRAPPED, incrementing time");
-		               ++block.nTime;
-		           }
-		       }
-        }
-
+ 	
 
         //// debug print
         block.print();
@@ -3127,9 +3116,9 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nNonce = %u \n", block.nNonce);
 
         if (fTestNet)
-           assert(block.hashMerkleRoot == uint256("0x184125f50e97191993cbcdeb57f2bed345c6fa3b2e76dc8ffa171f55b1a6de75"));
+           assert(block.hashMerkleRoot == uint256("0x55c7717b0d8765c5b539a0ba0fc1f3398618842a854c47abbd5e06450c97bf6a"));
         else
-           assert(block.hashMerkleRoot == uint256("0x184125f50e97191993cbcdeb57f2bed345c6fa3b2e76dc8ffa171f55b1a6de75"));
+           assert(block.hashMerkleRoot == uint256("0x55c7717b0d8765c5b539a0ba0fc1f3398618842a854c47abbd5e06450c97bf6a"));
 
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
