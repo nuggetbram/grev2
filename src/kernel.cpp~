@@ -17,10 +17,7 @@ unsigned int nModifierInterval = MODIFIER_INTERVAL;
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of
-    ( 0, 0x0e00670bu )
-    ( 48000, 0x8274b4fcu )
-    ( 136822, 0xaafc7a2du )
-    ( 477014, 0xd36de126 )
+    ( 0, 0x93230ea5 )
     ;
 	
 // Get time weight
