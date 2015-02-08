@@ -11,22 +11,22 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 # UNCOMMENT THIS SECTION TO BUILD ON WINDOWS
 
-#windows:LIBS += -lshlwapi
-#LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
-#LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
-#windows:LIBS += -lws2_32 -lole32 -loleaut32 -luuid -lgdi32
-#LIBS += -lboost_system-mgw46-mt-sd-1_54 -lboost_filesystem-mgw46-mt-sd-1_54 -lboost_program_options-mgw46-mt-sd-1_54 -lboost_thread-mgw46-mt-sd-1_54 -lboost_regex-mgw46-mt-sd-1_54
-#BOOST_LIB_SUFFIX=-mgw48-mt-s-1_55
-#BOOST_INCLUDE_PATH=C:/deps/boost_1_54_0
-#BOOST_LIB_PATH=C:/deps/boost_1_54_0/stage/lib
-#BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
-#BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
-#OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.1e/include
-#OPENSSL_LIB_PATH=C:/deps/openssl-1.0.1e
-#MINIUPNPC_INCLUDE_PATH=C:/deps/
-#MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
-#QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.3
-#QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.3/.libs
+windows:LIBS += -lshlwapi
+LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
+LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
+windows:LIBS += -lws2_32 -lole32 -loleaut32 -luuid -lgdi32
+LIBS += -lboost_system-mgw49-mt-s-1_54 -lboost_filesystem-mgw49-mt-s-1_54 -lboost_program_options-mgw49-mt-s-1_54 -lboost_thread-mgw49-mt-s-1_54 -lboost_regex-mgw49-mt-s-1_54
+BOOST_LIB_SUFFIX=-mgw49-mt-s-1_54
+BOOST_INCLUDE_PATH=F:/BTCDeps/boost_1_54_0
+BOOST_LIB_PATH=F:/BTCDeps/boost_1_54_0/stage/lib
+BDB_INCLUDE_PATH=F:/BTCDeps/db-4.8.30.NC/build_unix
+BDB_LIB_PATH=F:/BTCDeps/db-4.8.30.NC/build_unix
+OPENSSL_INCLUDE_PATH=F:/BTCDeps/openssl-1.0.1j/include
+OPENSSL_LIB_PATH=F:/BTCDeps/openssl-1.0.1j
+MINIUPNPC_INCLUDE_PATH=F:/BTCDeps/
+MINIUPNPC_LIB_PATH=F:/BTCDeps/miniupnpc
+QRENCODE_INCLUDE_PATH=F:/BTCDeps/qrencode-3.4.4
+QRENCODE_LIB_PATH=F:/BTCDeps/qrencode-3.4.4/.libs
 
 OBJECTS_DIR = build
 MOC_DIR = build
@@ -192,10 +192,10 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/blockbrowser.h \
     src/qt/savingsdialog.h \
     src/clientversion.h \
-    src/sph_radiogatun.h \
+	src/sph_radiogatun.h \
 	src/sph_panama.h \
 	src/sph_sha2.h
-	
+
 SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/transactiontablemodel.cpp \
     src/qt/addresstablemodel.cpp \
@@ -265,7 +265,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/blockbrowser.cpp \
     src/qt/savingsdialog.cpp \
     src/pbkdf2.cpp \
-    src/radiogatun.c \
+	src/radiogatun.c \
 	src/panama.c \
 	src/sha2.c
 
